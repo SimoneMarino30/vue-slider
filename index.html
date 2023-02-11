@@ -67,96 +67,29 @@
             class="my-carousel-main"
             id="slides-container"
           >
+            <!-- IMMAGINE VISUALIZZATA -->
             <div class="slide active">
-              <img src="img/01.webp" />
+              <img
+                :src="movies.images[movies.activeImage]"
+                :class="(index == movies.activeImage) ? 'active' : ''"
+              />
               <div class="slide-text">
-                <h2 class="">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita voluptatum unde laboriosam molestiae.
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                  deserunt doloremque hic eaque culpa aspernatur.
-                </p>
+                <h2 :class="">{{movies.titles[movies.activeImage]}}</h2>
+                <p>{{movies.texts[movies.activeImage]}}</p>
               </div>
             </div>
+          </div>
 
-            <!-- <div class="slide">
-              <img src="./img/02.webp" />
-              div.te
-              <div class="slide-text">
-                <h2>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita voluptatum unde laboriosam molestiae.
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                  deserunt doloremque hic eaque culpa aspernatur.
-                </p>
-              </div>
-            </div>
-
-            <div class="slide">
-              <img src="./img/03.webp" />
-              <div class="slide-text">
-                <h2>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita voluptatum unde laboriosam molestiae.
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                  deserunt doloremque hic eaque culpa aspernatur.
-                </p>
-              </div>
-            </div>
-
-            <div class="slide">
-              <img src="./img/04.webp" />
-              <div class="slide-text">
-                <h2>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita voluptatum unde laboriosam molestiae.
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                  deserunt doloremque hic eaque culpa aspernatur.
-                </p>
-              </div>
-            </div>
-
-            <div class="slide">
-              <img src="./img/05.webp" />
-              <div class="slide-text">
-                <h2>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Expedita voluptatum unde laboriosam molestiae.
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                  deserunt doloremque hic eaque culpa aspernatur.
-                </p>
-              </div>
-            </div>
-          </div> -->
-
+          <!-- THUMBNAILS -->
           <div
             class="my-carousel-thumbs"
             id="thumbs-container"
           >
             <div class="col thumb">
-              <img src="./img/01.webp" />
-            </div>
-            <div class="col thumb">
-              <img src="./img/02.webp" />
-            </div>
-            <div class="col thumb">
-              <img src="./img/03.webp" />
-            </div>
-            <div class="col thumb">
-              <img src="./img/04.webp" />
-            </div>
-            <div class="col thumb">
-              <img src="./img/05.webp" />
+              <img
+                :src="movies.images[index]"
+                v-for="(image, index) in movies.images"
+              />
             </div>
           </div>
         </div>
@@ -165,6 +98,7 @@
           <button
             class="btn btn-outline-dark"
             id="prev"
+            @click="prevImage()"
           >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
@@ -186,6 +120,7 @@
           <button
             class="btn btn-outline-dark"
             id="next"
+            @click="nextImage()"
           >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
