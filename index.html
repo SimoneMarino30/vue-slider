@@ -89,6 +89,7 @@
               <img
                 :src="movies.images[index]"
                 v-for="(image, index) in movies.images"
+                @click="switchToImage(index)"
               />
             </div>
           </div>

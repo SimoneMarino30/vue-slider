@@ -15,26 +15,24 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px dashed yellow;
+  /* border: 3px dashed yellow; */
 }
 
 .my-carousel {
   width: 80%;
   margin: 0 auto;
-
   position: relative;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px dashed blue;
+  /* border: 3px dashed blue; */
 }
 
 .my-carousel-main {
-  height: 80vh;
+  height: 90vh;
   width: 60vw;
   margin-bottom: 15px;
-  border: 3px dashed red;
+  /* border: 3px dashed red; */
 }
 
 .slide {
@@ -68,15 +66,15 @@ img {
 
 .thumb {
   width: 20vw;
-  height: 16vh;
+  height: 18vh;
+  margin-left: 10px;
   cursor: pointer;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border: 3px dashed palegreen;
+  /* border-top: 1px solid black; */
+  /* border-right: 1px solid black; */
 }
 
-.thumb:last-child {
-  border-bottom: 1px solid black;
+.thumb img {
+  padding: 4px;
 }
 
 .controls {
