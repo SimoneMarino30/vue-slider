@@ -72,6 +72,8 @@
               <img
                 :src="movies.images[movies.activeImage]"
                 :class="(index == movies.activeImage) ? 'active' : ''"
+                @mouseover="hover = true"
+                @mouseover="hover = false"
               />
               <div class="slide-text">
                 <h2 :class="">{{movies.titles[movies.activeImage]}}</h2>
@@ -106,16 +108,18 @@
 
           <button
             class="btn btn-outline-dark"
-            id="inverti-autoplay"
+            id="play-autoplay"
+            @click="autoPlay()"
           >
-            <i class="fa-solid fa-repeat"></i>
+            <i class="fa-solid fa-play"></i>
           </button>
 
           <button
             class="btn btn-outline-dark"
-            id="stop-autoplay"
+            id="inverti-autoplay"
+            @click="invertAutoPlay()"
           >
-            <i class="fa-solid fa-stop"></i>
+            <i class="fa-solid fa-repeat"></i>
           </button>
 
           <button
