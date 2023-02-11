@@ -72,8 +72,6 @@
               <img
                 :src="movies.images[movies.activeImage]"
                 :class="(index == movies.activeImage) ? 'active' : ''"
-                @mouseover="hover = true"
-                @mouseover="hover = false"
               />
               <div class="slide-text">
                 <h2 :class="">{{movies.titles[movies.activeImage]}}</h2>
